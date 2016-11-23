@@ -9,7 +9,11 @@ services:
       - /var/run/docker.sock:/tmp/docker.sock:ro
 
   frontend:
-    image: adamconder/adamconder-frontend
-    container_name: frontend
+    image: adamconder/adamconder-frontend:latest
+    container_name: adamconder-frontend
     environment:
-      VIRTUAL_HOST: frontend.service
+      NPM_CONFIG_LOGLEVEL: warn
+      NPM_PORT: 3000
+      VIRTUAL_HOST: adamconder-frontend.service
+    ports:
+      - "3000:3000"

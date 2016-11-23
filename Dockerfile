@@ -1,12 +1,6 @@
 FROM node:argon
 
 ###############
-### config
-###############
-
-ENV NPM_CONFIG_LOGLEVEL warn
-
-###############
 ### app
 ###############
 
@@ -25,5 +19,5 @@ COPY . /usr/src/app
 ### run
 ###############
 
-EXPOSE 3000
+#EXPOSE 3000
 CMD [ "npm", "start" ]
